@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate } from 'react-router-dom';
-import jwt_decode from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 const ProtectedRoute = ({ children, allowedRoles }) => {
     const token = localStorage.getItem("token");
@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children, allowedRoles }) => {
         return <Navigate to="/404" />;
     }
 
-    const decoded = jwt_decode(token);
+    const decoded = jwtDecode(token);
     const userRole = decoded.role;
 
     if (!allowedRoles.includes(userRole)) {

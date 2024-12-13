@@ -1,11 +1,27 @@
 .login-popup {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background-color: #00000090;
-    display: grid;
+    position: fixed;
+    /* Sử dụng fixed thay vì absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* Căn giữa popup so với trang */
+    z-index: 1000;
+    /* Đảm bảo popup nằm trên cùng */
+    width: 400px;
+    /* Rộng của popup */
+    background-color: white;
+    /* Nền của popup */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Thêm bóng để nổi bật */
+    border-radius: 8px;
+    /* Bo góc */
+    padding: 20px;
+    /* Khoảng cách trong */
+    display: block;
+    /* Hoặc flex, tùy thuộc vào nội dung bên trong */
 }
+
+
 
 .login-popup-container {
     place-self: center;
