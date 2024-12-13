@@ -23,11 +23,11 @@ const Cart = () => {
             return (
               <div>
                 <div className="cart-item-title cart-item-item">
-                  <img src={url+"image/"+item.image} alt="" />
+                  <img src={url + "image/" + item.image} alt="" />
                   <p>{item.name}</p>
                   <p>${item.price}</p>
                   <p>{cartItem[item._id]}</p>
-                  <p>{item.price * cartItem[item._id]}</p>
+                  <p>${item.price * cartItem[item._id]}</p>
                   <p onClick={() => removeFromCart(item._id)} className='cross'>X</p>
                 </div>
                 <hr />
@@ -47,25 +47,25 @@ const Cart = () => {
             <hr />
             <div className="cart-total-detail">
               <p>Delivery fee</p>
-              <p>${getTotalCartAmount()===0?0:2}</p>
+              <p>${getTotalCartAmount() === 0 ? 0 : 2}</p>
             </div>
             <hr />
             <div className="cart-total-detail">
               <b>Total</b>
-              <b>${getTotalCartAmount()===0?0:getTotalCartAmount()+2}</b>
+              <b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 2}</b>
             </div>
           </div>
-          <button onClick={()=>navigate('/order')}>Proceed to checkout</button>
+          <button onClick={() => navigate('/order')}>Proceed to checkout</button>
         </div>
         <div className="cart-promocode">
-        <div>
-          <p>If you have a promocode, enter here</p>
-          <div className="cart-promocode-input">
-            <input type="text" placeholder='promo code' name="" id="" />
-            <button>Submit</button>
+          <div>
+            <p>If you have a promocode, enter here</p>
+            <div className="cart-promocode-input">
+              <input type="text" placeholder='promo code' name="" id="" />
+              <button>Submit</button>
+            </div>
           </div>
         </div>
-      </div>
       </div>
     </div>
   )

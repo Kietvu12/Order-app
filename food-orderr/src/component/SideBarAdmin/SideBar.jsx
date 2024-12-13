@@ -3,19 +3,19 @@ import './SideBar.css'
 import { assets } from '../../assets/assets'
 import { NavLink } from 'react-router-dom'
 
-const SideBar = () => {
+const SideBarAdmin = () => {
   return (
     <div className="sidebar">
       <div className="sidebar-options">
-        <NavLink to='/add' className="sidebar-option">
+        <NavLink to='/admin/add' className="sidebar-option">
           <img src={assets.add_icon} alt="" />
           <p>Add items</p>
         </NavLink>
-        <NavLink to='/list' className="sidebar-option">
+        <NavLink to='/admin/list' className="sidebar-option">
           <img src={assets.order_icon} alt="" />
           <p>List items</p>
         </NavLink>
-        <NavLink to='/order' className="sidebar-option">
+        <NavLink to='/admin/order' className="sidebar-option">
           <img src={assets.order_icon} alt="" />
           <p>Order</p>
         </NavLink>
@@ -24,4 +24,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default SideBarAdmin

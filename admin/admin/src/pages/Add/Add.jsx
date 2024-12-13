@@ -7,35 +7,35 @@ const Add = () => {
   const url = "http://localhost:4000"
   const [image, setImage] = useState(false);
   const [data, setData] = useState({
-    name:"",
-    description:"",
-    price:"",
-    category:"Salad",
+    name: "",
+    description: "",
+    price: "",
+    category: "Salad",
   })
-  const onChangeHandler = (event) =>{
+  const onChangeHandler = (event) => {
     const name = event.target.name;
     const value = event.target.value;
-    setData(data=>({...data, [name]:value}))
+    setData(data => ({ ...data, [name]: value }))
   }
-  useEffect(()=>{
+  useEffect(() => {
     console.log(data)
   }, [data]
   )
-  const onSubmitHandler = async (event) =>{
+  const onSubmitHandler = async (event) => {
     event.preventDefault()
     const formData = new FormData()
     formData.append("name", data.name)
     formData.append("description", data.description)
-    formData.append("price",Number(data.price))
-    formData.append("category",data.category)
+    formData.append("price", Number(data.price))
+    formData.append("category", data.category)
     formData.append("image", image)
     const response = await axios.post(`${url}/api/food/add`, formData)
-    if(response.data.success){
+    if (response.data.success) {
       setData({
-        name:"",
-        description:"",
-        price:"",
-        category:"Salad"
+        name: "",
+        description: "",
+        price: "",
+        category: "Salad"
       })
       setImage(false)
       toast.success(response.data.message)
@@ -49,7 +49,7 @@ const Add = () => {
         <div className="add-img-upload flex-col">
           <p>Upload Image</p>
           <label htmlFor="image">
-            <img src={image?URL.createObjectURL(image):assets.upload_area} alt="" />
+            <img src={image ? URL.createObjectURL(image) : assets.upload_area} alt="" />
           </label>
           <input onChange={(e) => setImage(e.target.files[0])} type="file" id="image" hidden required />
         </div>
@@ -59,7 +59,7 @@ const Add = () => {
         </div>
         <div className="add-product-description flex-col">
           <p>Product Description</p>
-          <textarea type="text" name="description" onChange={onChangeHandler} value={data.description} placeholder="Type here" rows ="6" id="" ></textarea>
+          <textarea type="text" name="description" onChange={onChangeHandler} value={data.description} placeholder="Type here" rows="6" id="" ></textarea>
         </div>
         <div className="add-category-price">
           <div onChange={onChangeHandler} className="add-category flex-col">

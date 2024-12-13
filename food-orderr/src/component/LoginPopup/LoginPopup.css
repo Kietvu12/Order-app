@@ -1,4 +1,4 @@
-.login-popup{
+.login-popup {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -6,7 +6,8 @@
     background-color: #00000090;
     display: grid;
 }
-.login-popup-container{
+
+.login-popup-container {
     place-self: center;
     width: max(23vw, 330px);
     color: #808080;
@@ -19,28 +20,33 @@
     font-size: 14px;
     animation: fadeIn 0.5s;
 }
-.login-popup-title{
+
+.login-popup-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: black;
 }
-.login-popup-title img{
+
+.login-popup-title img {
     width: 16px;
     cursor: pointer;
 }
-.login-popup-input{
+
+.login-popup-input {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
-.login-popup-input input{
+
+.login-popup-input input {
     outline: none;
     border: 1px solid #c9c9c9;
     padding: 10px;
     border-radius: 4px;
 }
-.login-popup-container button{
+
+.login-popup-container button {
     border: none;
     padding: 10px;
     border-radius: 4px;
@@ -49,14 +55,44 @@
     font-size: 15px;
     cursor: pointer;
 }
-.login-popup-condition{
+
+.login-popup-condition {
     display: flex;
     align-items: start;
     gap: 8px;
     margin-top: -15px;
 }
-.login-popup-condition input{
+
+.login-popup-condition input {
     color: tomato;
     font-weight: 500;
     cursor: pointer;
+}
+
+.success-message {
+    text-align: center;
+    padding: 20px;
+}
+
+.success-message h3 {
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.success-message p {
+    margin-bottom: 20px;
+}
+
+.success-message button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
 }
